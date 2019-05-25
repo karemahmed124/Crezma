@@ -1,32 +1,16 @@
-
-client.on("message", message => {
-    var prefix = "-";
-        if (message.author.id === client.user.id) return;
-        if (message.guild) {
-       let embed = new Discord.RichEmbed()
-        let args = message.content.split(' ').slice(1).join(' ');
-    if(message.content.split(' ')[0] == prefix + 'bc') {
-        if (!args[1]) {
-    message.channel.send("bc <message>");
-    return;
-    }
-            message.guild.members.forEach(m => {
-       if(!message.member.hasPermission('ADMINISTRATOR')) return;
-                m.send(args);
-            });
-            const AziRo = new Discord.RichEmbed()
-            .setAuthor(message.author.username, message.author.avatarURL)
-            .setTitle(':white_check_mark:| جاري ارسال رسالتك ') 
-            .addBlankField(true)
-            .addField(':hotsprings:| عدد الاعضاء المرسل لهم ', message.guild.memberCount , true)
-            .addField(':pencil:| الرسالة ', args)
-            .setColor('RANDOM')
-            message.channel.sendEmbed(AziRo);
-        }
-        } else {
-            return;
-        }
-    });
+const Discord = require("discord.js");
+const client = new Discord.Client();
+var prefix = "-";
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`Desert Bot- Script By : EX Clan`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`Crezma ,!`,"http://twitch.tv/Death Shop")
+client.user.setStatus("dnd")
+});
 
 const developers = ["562313255322779657"]
 const adminprefix = "-";
